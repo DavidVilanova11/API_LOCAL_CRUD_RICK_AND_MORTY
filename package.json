@@ -4,10 +4,10 @@
   "description": "Mi proyecto JSON Server",
   "scripts": {
     "start": "node server.js",
-    "dev": "json-server --watch db.json --port 3000"
+    "dev": "json-server --watch db.json --port 4445"
   },
   "devDependencies": {
-    "json-server": "^0.16.3"
+    "json-server": "^1.0.0-alpha.23"
   },
   "main": "index.js",
   "dependencies": {
