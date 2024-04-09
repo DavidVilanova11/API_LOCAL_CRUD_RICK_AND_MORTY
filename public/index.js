@@ -7,7 +7,7 @@ const $fragment = $d.createDocumentFragment(); // fragment per no re-renderitzar
 
 const getAll = async () => {
   try {
-    let res = await fetch("http://localhost:4445/results");
+    let res = await fetch("http://localhost:3000/results");
     let data = await res.json();
     console.log(data);
     data.forEach((el) => {
@@ -45,7 +45,7 @@ $d.addEventListener("submit", async (e) => {
       // POST
       try {
         // get last id from db.json
-        let res = await fetch("http://localhost:4445/results");
+        let res = await fetch("http://localhost:3000/results");
         let data = await res.json();
         let lastId = data[data.length - 1].id;
 
@@ -61,7 +61,7 @@ $d.addEventListener("submit", async (e) => {
             status: e.target.estat.value,
           }),
         };
-        res = await fetch("http://localhost:4445/results", options);
+        res = await fetch("http://localhost:3000/results", options);
         let json = await res.json();
         location.reload();
       } catch (e) {
@@ -82,7 +82,7 @@ $d.addEventListener("submit", async (e) => {
           }),
         };
         let res = await fetch(
-          `http://localhost:4445/results/${e.target.id.value}`,
+          `http://localhost:3000/results/${e.target.id.value}`,
           options
         );
         let json = await res.json();
@@ -110,9 +110,10 @@ $d.addEventListener("click", async (e) => {
           },
         };
         let res = await fetch(
-          `http://localhost:4445/results/${e.target.dataset.id}`,
+          `http://localhost:3000/results/${e.target.dataset.id}`,
           options
         );
+        // faltaria comprovar si el res és ok
         let json = await res.json();
         location.reload();
       } catch (e) {
